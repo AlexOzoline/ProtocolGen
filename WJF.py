@@ -146,7 +146,7 @@ def update_confluence(new_string, confirmation):
             title='Alert Copy Space'
         )
 
-
+# TODO add destinguishing between sharkninja US and EMEA, add CA-EUWZ1 for non-ish number clients
 # Manually parsing of input to form html
 def generate_confluence_link(confirmation):
     input_block = input_text.get("1.0", "end-1c")  # Get text from input field
@@ -156,14 +156,20 @@ def generate_confluence_link(confirmation):
     tmp_hour = tmp_hour - 10
     if tmp_hour < 0:
         tmp_hour = tmp_hour + 24
-    start_time = str(tmp_hour) + ':' + splitted[1]
+    if tmp_hour == 0:
+        start_time = "00" + ':' + splitted[1]
+    else:
+        start_time = str(tmp_hour) + ':' + splitted[1]
     end_time = end_time_entry.get()
     splitted = end_time.split(':')
     tmp_hour = int(splitted[0])
     tmp_hour = tmp_hour - 10
     if tmp_hour < 0:
         tmp_hour = tmp_hour + 24
-    end_time = str(tmp_hour) + ':' + splitted[1]
+    if tmp_hour == 0:
+        end_time = "00" + ':' + splitted[1]
+    else:     
+        end_time = str(tmp_hour) + ':' + splitted[1]
     comments = comments_text.get("1.0", "end-1c")
     # Replace -> in comments with appropriate right arrow emoji
     comments = comments.replace('->', '&rarr;')
@@ -215,9 +221,9 @@ def generate_confluence_link(confirmation):
         
         #define environment
         if prod_lv_var.get():
-            environment = "Prod (LV)"
+            environment = "PRD (LV)"
         elif prod_ed_var.get():
-            environment = "Prod (ED)"
+            environment = "PRD (ED)"
         elif UAT_lv_var.get():
             environment = "UAT (LV)"
         elif UAT_ed_var.get():
