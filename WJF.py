@@ -96,7 +96,8 @@ shortening_to_full = {
     "msgrv": "Musgrave",
     "dovra": "Dover",
     "vbh24": "VBH",
-    "dbnxt": "DBNext"
+    "dbnxt": "DBNext",
+    "alkzz": "Alko"
 }
 
 def extract_substring_within_brackets(input_string):
@@ -156,8 +157,8 @@ def generate_confluence_link(confirmation):
     tmp_hour = tmp_hour - 10
     if tmp_hour < 0:
         tmp_hour = tmp_hour + 24
-    if tmp_hour == 0:
-        start_time = "00" + ':' + splitted[1]
+    if tmp_hour < 10:
+        start_time = "0" + str(tmp_hour) + ':' + splitted[1]
     else:
         start_time = str(tmp_hour) + ':' + splitted[1]
     end_time = end_time_entry.get()
@@ -166,8 +167,8 @@ def generate_confluence_link(confirmation):
     tmp_hour = tmp_hour - 10
     if tmp_hour < 0:
         tmp_hour = tmp_hour + 24
-    if tmp_hour == 0:
-        end_time = "00" + ':' + splitted[1]
+    if tmp_hour < 10:
+        end_time = "0" + str(tmp_hour) + ':' + splitted[1]
     else:     
         end_time = str(tmp_hour) + ':' + splitted[1]
     comments = comments_text.get("1.0", "end-1c")
