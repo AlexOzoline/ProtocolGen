@@ -80,7 +80,14 @@ company_to_ish = {
     "Motul": "ISH42",
     "Technolit": "ISH42",
     "SharkNinja US": "ISH45",
-    "Motul APAC": "ISH52"
+    "Motul APAC": "ISH52",
+    "Zonami" : "CA-EUWZ1",
+    "EDE" : "CA-EUWZ1",
+    "Frindt" : "CA-EUWZ1",
+    "Roehm" : "CA-EUWZ1", 
+    "Manorga" : "CA-EUWZ1",
+    "Toolineo" : "CA-EUWZ1",
+    "SccFrance" : "CA-EUWZ1"
 }
 
 
@@ -212,43 +219,33 @@ def generate_confluence_link(confirmation):
         bracket_text = bracket_text.split('/')
         shortening = bracket_text[-3]
         company = shortening_to_full[shortening]
-    elif company != "shrkndpl":    
-        symbols = []
-        if green_check_var.get():
-            symbols.append(checkmark_emoji)
-        if yellow_warning_var.get():
-            symbols.append(warning_emoji)
-        symbols_str = " ".join(symbols)
-        
-        #define environment
-        if prod_lv_var.get():
-            environment = "PRD (LV)"
-        elif prod_ed_var.get():
-            environment = "PRD (ED)"
-        elif UAT_lv_var.get():
-            environment = "UAT (LV)"
-        elif UAT_ed_var.get():
-            environment = "UAT (ED)"
-        elif not_applicable_check.get():
-            environment = ""
-        print(environment)   
-        if company in company_to_ish:
-            print("THIS IS RUNNING")
-            ish_num = company_to_ish[company]
-            confluence_link = f'<li><p>{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC &rarr; {environment} &rarr; <a href="{url}"> {quoted_text} </a>&rarr; {comments}</p></li>'
-            preview_text = f'{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC -> {environment}  -> {quoted_text} -> {comments}'
-        else:
-            confluence_link = f'<li><p>{symbols_str} ({company}): {start_time}-{end_time} UTC &rarr; {environment} &rarr; <a href="{url}"> {quoted_text} </a>&rarr; {comments}</p></li>'
-            preview_text = f'{symbols_str} ({company}): {start_time}-{end_time} UTC -> {environment} -> {quoted_text} -> {comments}'
+    
+    symbols = []
+    if green_check_var.get():
+        symbols.append(checkmark_emoji)
+    if yellow_warning_var.get():
+        symbols.append(warning_emoji)
+    symbols_str = " ".join(symbols)
+    
+    #define environment
+    if prod_lv_var.get():
+        environment = "PRD (LV)"
+    elif prod_ed_var.get():
+        environment = "PRD (ED)"
+    elif UAT_lv_var.get():
+        environment = "UAT (LV)"
+    elif UAT_ed_var.get():
+        environment = "UAT (ED)"
+    elif not_applicable_check.get():
+        environment = ""
+    print(environment)   
+    if company in company_to_ish:
+        ish_num = company_to_ish[company]
+        confluence_link = f'<li><p>{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC &rarr; {environment} &rarr; <a href="{url}"> {quoted_text} </a>&rarr; {comments}</p></li>'
+        preview_text = f'{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC -> {environment}  -> {quoted_text} -> {comments}'
     else:
-        symbols = []
-        if green_check_var.get():
-            symbols.append(checkmark_emoji)
-        if yellow_warning_var.get():
-            symbols.append(warning_emoji)
-        symbols_str = " ".join(symbols)
-        confluence_link = f'<li><p>{symbols_str} ISH18 (SharkNinja - EMEA): {start_time}-{end_time} UTC &rarr; <a href="{url}"> example alert </a>&rarr; Deployment </p></li>'
-        preview_text = f'{symbols_str} ISH18 (SharkNinja - EMEA): {start_time}-{end_time} UTC -> example alert -> deployment'
+        confluence_link = f'<li><p>{symbols_str} ({company}): {start_time}-{end_time} UTC &rarr; {environment} &rarr; <a href="{url}"> {quoted_text} </a>&rarr; {comments}</p></li>'
+        preview_text = f'{symbols_str} ({company}): {start_time}-{end_time} UTC -> {environment} -> {quoted_text} -> {comments}'
 
     output_text.delete("1.0", "end")
     output_text.insert("1.0", preview_text)
