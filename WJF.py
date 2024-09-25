@@ -11,84 +11,85 @@ from dotenv import load_dotenv
 
 #Dictionary containing definitions from Company name -> ISH number
 company_to_ish = {
-    "Plato": "ISH01",
-    "Quadient": "ISH01",
-    "Office Distribution": "ISH02",
-    "Aliaxis": "ISH03",
-    "Huisman": "ISH03",
-    "RSPB": "ISH03",
-    "Upergy": "ISH03",
-    "Emuca": "ISH04",
-    "Jarola-ish04": "ISH04",
-    "Miele": "ISH05",
-    "Jarola-ish06": "ISH06",
-    "VBH": "ISH07",
-    "BlockFoods": "ISH08",
-    "ERLAU": "ISH08",
-    "Laminat Depot": "ISH08",
-    "Office Distribution-ish08": "ISH08",
-    "Netto": "ISH09",
-    "Colas": "ISH10",
-    "Alko": "ISH12",
-    "Lekkerland": "ISH12",
-    "NICE": "ISH12",
-    "Bomag": "ISH13",
-    "Trumpf": "ISH13",
-    "Elefant": "ISH14",
-    "Nutreco": "ISH14",
-    "Dynapac": "ISH16",
-    "Oxford": "ISH16",
-    "Wiltec": "ISH16",
-    "Dover": "ISH17",
-    "Rockwool": "ISH18",
-    "SharkNinja": "ISH18",
-    "Flamco": "ISH19",
-    "TUEVSued": "ISH22",
-    "AtlasCopco": "ISH23",
-    "CFAO": "ISH24",
-    "Ceetrus": "ISH24",
-    "DBNext": "ISH24",
-    "Trenois Decamps": "ISH24",
-    "BeckmanCoulter": "ISH25",
-    "AFDB": "ISH26",
-    "Paredes": "ISH26",
-    "Vanderlande": "ISH26",
-    "Staples": "ISH27",
-    "Sowa Tool": "ISH28",
-    "Breg": "ISH29",
-    "Musgrave": "ISH32",
-    "Bertus": "ISH34",
-    "Buerklin": "ISH34",
-    "Burckhardt": "ISH34",
-    "RijkZwaan": "ISH34",
-    "Camfil": "ISH35",
-    "Otis": "ISH35",
-    "Reisswolf": "ISH35",
-    "Alliance Laundry": "ISH36",
-    "Daikin": "ISH36",
-    "Douglas Dynamics": "ISH36",
-    "KION Group": "ISH36",
-    "SureWerx": "ISH36",
-    "Mekonomen Pro": "ISH37",
-    "Saldoportalen": "ISH37",
-    "Whitestuff Oracle": "ISH38",
-    "MusicStore": "ISH39",
-    "Soennecken": "ISH40",
-    "ArgoHytos": "ISH42",
-    "Fraisa": "ISH42",
-    "Kubota": "ISH42",
-    "Motul": "ISH42",
-    "Technolit": "ISH42",
-    "SharkNinja US": "ISH45",
-    "Motul APAC": "ISH52",
-    "Zonami" : "CA-EUWZ1",
-    "EDE" : "CA-EUWZ1",
-    "Frindt" : "CA-EUWZ1",
-    "Roehm" : "CA-EUWZ1", 
-    "Manorga" : "CA-EUWZ1",
-    "Toolineo" : "CA-EUWZ1",
-    "SccFrance" : "CA-EUWZ1"
+ 'plato': 'ISH01',
+ 'quadient': 'ISH01',
+ 'office distribution': 'ISH02',
+ 'aliaxis': 'ISH03',
+ 'huisman': 'ISH03',
+ 'rspb': 'ISH03',
+ 'upergy': 'ISH03',
+ 'emuca': 'ISH04',
+ 'jarola-ish04': 'ISH04',
+ 'miele': 'ISH05',
+ 'jarola-ish06': 'ISH06',
+ 'vbh': 'ISH07',
+ 'blockfoods': 'ISH08',
+ 'erlau': 'ISH08',
+ 'laminat depot': 'ISH08',
+ 'office distribution-ish08': 'ISH08',
+ 'netto': 'ISH09',
+ 'colas': 'ISH10',
+ 'alko': 'ISH12',
+ 'lekkerland': 'ISH12',
+ 'nice': 'ISH12',
+ 'bomag': 'ISH13',
+ 'trumpf': 'ISH13',
+ 'elefant': 'ISH14',
+ 'nutreco': 'ISH14',
+ 'dynapac': 'ISH16',
+ 'oxford': 'ISH16',
+ 'wiltec': 'ISH16',
+ 'dover': 'ISH17',
+ 'rockwool': 'ISH18',
+ 'sharkninja': 'ISH18',
+ 'flamco': 'ISH19',
+ 'tuevsued': 'ISH22',
+ 'atlascopco': 'ISH23',
+ 'cfao': 'ISH24',
+ 'ceetrus': 'ISH24',
+ 'dbnext': 'ISH24',
+ 'trenois decamps': 'ISH24',
+ 'beckmancoulter': 'ISH25',
+ 'afdb': 'ISH26',
+ 'paredes': 'ISH26',
+ 'vanderlande': 'ISH26',
+ 'staples': 'ISH27',
+ 'sowa tool': 'ISH28',
+ 'breg': 'ISH29',
+ 'musgrave': 'ISH32',
+ 'bertus': 'ISH34',
+ 'buerklin': 'ISH34',
+ 'burckhardt': 'ISH34',
+ 'rijkzwaan': 'ISH34',
+ 'camfil': 'ISH35',
+ 'otis': 'ISH35',
+ 'reisswolf': 'ISH35',
+ 'alliance laundry': 'ISH36',
+ 'daikin': 'ISH36',
+ 'douglas dynamics': 'ISH36',
+ 'kion group': 'ISH36',
+ 'surewerx': 'ISH36',
+ 'mekonomen pro': 'ISH37',
+ 'saldoportalen': 'ISH37',
+ 'whitestuff oracle': 'ISH38',
+ 'musicstore': 'ISH39',
+ 'soennecken': 'ISH40',
+ 'argohytos': 'ISH42',
+ 'fraisa': 'ISH42',
+ 'kubota': 'ISH42',
+ 'motul': 'ISH42',
+ 'technolit': 'ISH42',
+ 'sharkninja us': 'ISH45',
+ 'motul apac': 'ISH52',
+ 'zonami': 'CA-EUWZ1',
+ 'ede': 'CA-EUWZ1',
+ 'frindt': 'CA-EUWZ1',
+ 'roehm': 'CA-EUWZ1',
+ 'manorga': 'CA-EUWZ1',
+ 'toolineo': 'CA-EUWZ1',
+ 'sccfrance': 'CA-EUWZ1'
 }
+
 
 
 # To handle cases involving shared infrastructure, may require updating 
@@ -214,6 +215,7 @@ def generate_confluence_link(confirmation):
     print("url = ", url)
 
     # Deal with 'shared infrastructure' cases
+    company
     if company == "Shared":
         bracket_text = extract_substring_within_brackets(input_block)
         bracket_text = bracket_text.split('/')
@@ -232,14 +234,14 @@ def generate_confluence_link(confirmation):
         environment = "PRD (LV)"
     elif prod_ed_var.get():
         environment = "PRD (ED)"
-    elif UAT_lv_var.get():
+    elif uat_lv_var.get():
         environment = "UAT (LV)"
-    elif UAT_ed_var.get():
+    elif uat_ed_var.get():
         environment = "UAT (ED)"
     elif not_applicable_check.get():
         environment = ""
     print(environment)   
-    if company in company_to_ish:
+    if company.lower in company_to_ish:
         ish_num = company_to_ish[company]
         confluence_link = f'<li><p>{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC &rarr; {environment} &rarr; <a href="{url}"> {quoted_text} </a>&rarr; {comments}</p></li>'
         preview_text = f'{symbols_str} {ish_num} ({company}): {start_time}-{end_time} UTC -> {environment}  -> {quoted_text} -> {comments}'
