@@ -12,8 +12,8 @@ Before running WJF, ensure you have the necessary dependencies installed. You ca
 pip install -r requirements.txt
 ```
 
-Configuration
-You need to configure the tool by creating a .env file in the root directory of the project. This file should contain your Confluence API key and email address. Use the following structure:
+## Configuration
+In order to configure the tool a correctly structured .env file in the root directory of the project is required. This file should contain your Intershop Confluence API key and email address. Use the following structure:
 
 CONFLUENCE_API_KEY='YOUR_API_KEY_HERE'
 
